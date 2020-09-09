@@ -1,17 +1,16 @@
 package com.spring.applibrary.api;
 
-import com.spring.applibrary.model.Author;
-import com.spring.applibrary.service.AuthorService;
+import com.spring.applibrary.service.abstracts.AuthorService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.List;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.ModelAndViewDefiningException;
 
 @RestController
-@RequestMapping("/")
+@RequestMapping("/api")
 public class AuthorController {
+
     private  final AuthorService authorService;
 
     @Autowired
@@ -19,8 +18,23 @@ public class AuthorController {
         this.authorService = authorService;
     }
 
-    @GetMapping("/authors")
-    public List<Author> getAll(){
-        return  authorService.getAll();
+    @RequestMapping("/authors")
+    public ModelAndView getAll() {
+        ModelAndView modelAndView=new ModelAndView();
+        modelAndView.setViewName("authorslist");
+        modelAndView.addObject("author",authorService.getAll());
+        return  modelAndView;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+

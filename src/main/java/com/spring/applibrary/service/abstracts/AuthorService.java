@@ -1,4 +1,4 @@
-package com.spring.applibrary.service;
+package com.spring.applibrary.service.abstracts;
 
 
 import com.spring.applibrary.model.Author;

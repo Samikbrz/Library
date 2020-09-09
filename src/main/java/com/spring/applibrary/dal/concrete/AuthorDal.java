@@ -3,7 +3,10 @@ package com.spring.applibrary.dal.concrete;
 import com.spring.applibrary.dal.abstracts.EntityRepository;
 import com.spring.applibrary.model.Author;
 import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.provider.HibernateUtils;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 

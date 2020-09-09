@@ -1,6 +1,5 @@
 package com.spring.applibrary.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.sun.istack.NotNull;
 
 import javax.persistence.*;
@@ -14,10 +13,8 @@ public class Author {
     private int id;
 
     @NotNull
-    @Column(name = "author_name")
     private String authorName;
 
-    @Column(name = "description")
     private String description;
 
     public Author(int id,String authorName, String description) {
