@@ -3,8 +3,10 @@ package com.spring.applibrary.model;
 import com.sun.istack.NotNull;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "publishing_house")
 public class PublishingHouse {
     @Id
     private int id;
