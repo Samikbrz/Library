@@ -1,10 +1,9 @@
 package com.spring.applibrary.service.concrete;
 
-import com.spring.applibrary.dal.concrete.AuthorDal;
+import com.spring.applibrary.dal.AuthorDal;
 import com.spring.applibrary.model.Author;
 import com.spring.applibrary.service.abstracts.AuthorService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -23,21 +22,7 @@ public class AuthorManager implements AuthorService {
     @Override
     @Transactional()
     public List<Author> getAll() {
-        return authorDal.getAll();
+        return authorDal.findAll();
     }
 
-    @Override
-    public void add(Author author) {
-        authorDal.add(author);
-    }
-
-    @Override
-    public void update(Author author) {
-
-    }
-
-    @Override
-    public void Delete(Author author) {
-
-    }
 }

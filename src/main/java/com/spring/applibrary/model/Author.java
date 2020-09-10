@@ -12,7 +12,6 @@ public class Author {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @NotNull
     private String authorName;
 
     private String description;

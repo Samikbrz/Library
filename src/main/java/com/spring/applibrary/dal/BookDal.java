@@ -1,13 +1,13 @@
-package com.spring.applibrary.dal.concrete;
+package com.spring.applibrary.dal;
 
 import com.spring.applibrary.model.Book;
-import com.spring.applibrary.dal.abstracts.BookDal;
 import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public class BookDal implements BookDal {
+public class BookDal implements JpaRepository<Book,Long> {
 
     private final EntityManager entityManager;
 

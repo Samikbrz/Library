@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <title>Authors</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <table class="table table" style="margin-top: 50px;">
+        <thead class="thead-dark">
+        <tr>
+            <th> Id </th>
+            <th> Author Name </th>
+            <th> Description </th>
+            <th> Güncelle</th>
+            <th> Sil</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:if="${author.empty}">
+            <td colspan="2"> No Authors Available </td>
+        </tr>
+        <tr th:each="author : ${author}">
+            <td><span th:text="${author.id}"> Title </span></td>
+            <td><span th:text="${author.authorName}"> Title </span></td>
+            <td><span th:text="${author.description}"> Author </span></td>
+            <td> <button type="button" class="btn btn-primary">Güncelle</button></td>
+            <td> <button type="button" class="btn btn-danger">Sil</button></td>
+        </tr>
+        </tbody>
+    </table>
+    <button type="button" class="btn btn-success">Yeni Yazar Ekle</button>
+</div>
+</body>
+</html>

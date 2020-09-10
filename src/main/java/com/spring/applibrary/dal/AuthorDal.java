@@ -1,4 +1,4 @@
-package com.spring.applibrary.dal.concrete;
+package com.spring.applibrary.dal;
 
 import com.spring.applibrary.model.Author;
 import org.hibernate.Session;
@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public class AuthorDal implements com.spring.applibrary.dal.abstracts.AuthorDal {
+public class AuthorDal implements JpaRepository<Author,Long> {
 
     private final EntityManager entityManager;
 
