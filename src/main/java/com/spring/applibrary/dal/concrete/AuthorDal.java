@@ -8,6 +8,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
@@ -15,7 +16,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public class AuthorDal implements JpaRepository<Author,Long> {
+public class AuthorDal implements CrudRepository<Author,Integer> {
 
     private final EntityManager entityManager;
 
@@ -23,7 +24,6 @@ public class AuthorDal implements JpaRepository<Author,Long> {
     public AuthorDal(EntityManager entityManager) {
         this.entityManager = entityManager;
     }
-
 
     @Override
     public List<Author> findAll() {
@@ -33,12 +33,7 @@ public class AuthorDal implements JpaRepository<Author,Long> {
     }
 
     @Override
-    public List<Author> findAll(Sort sort) {
-        return null;
-    }
-
-    @Override
-    public List<Author> findAllById(Iterable<Long> iterable) {
+    public Iterable<Author> findAllById(Iterable<Integer> iterable) {
         return null;
     }
 
@@ -48,7 +43,7 @@ public class AuthorDal implements JpaRepository<Author,Long> {
     }
 
     @Override
-    public void deleteById(Long aLong) {
+    public void deleteById(Integer integer) {
 
     }
 
@@ -69,7 +64,9 @@ public class AuthorDal implements JpaRepository<Author,Long> {
 
     @Override
     public <S extends Author> S save(S s) {
-        return null;
+        Session session= entityManager.unwrap(Session.class);
+        session.createQuery("" ,Author.class).getResultList();
+        return s;
     }
 
     @Override
@@ -78,72 +75,13 @@ public class AuthorDal implements JpaRepository<Author,Long> {
     }
 
     @Override
-    public Optional<Author> findById(Long aLong) {
+    public Optional<Author> findById(Integer integer) {
         return Optional.empty();
     }
 
     @Override
-    public boolean existsById(Long aLong) {
+    public boolean existsById(Integer integer) {
         return false;
     }
 
-    @Override
-    public void flush() {
-
-    }
-
-    @Override
-    public <S extends Author> S saveAndFlush(S s) {
-        return null;
-    }
-
-    @Override
-    public void deleteInBatch(Iterable<Author> iterable) {
-
-    }
-
-    @Override
-    public void deleteAllInBatch() {
-
-    }
-
-    @Override
-    public Author getOne(Long aLong) {
-        return null;
-    }
-
-    @Override
-    public <S extends Author> Optional<S> findOne(Example<S> example) {
-        return Optional.empty();
-    }
-
-    @Override
-    public <S extends Author> List<S> findAll(Example<S> example) {
-        return null;
-    }
-
-    @Override
-    public <S extends Author> List<S> findAll(Example<S> example, Sort sort) {
-        return null;
-    }
-
-    @Override
-    public <S extends Author> Page<S> findAll(Example<S> example, Pageable pageable) {
-        return null;
-    }
-
-    @Override
-    public <S extends Author> long count(Example<S> example) {
-        return 0;
-    }
-
-    @Override
-    public <S extends Author> boolean exists(Example<S> example) {
-        return false;
-    }
-
-    @Override
-    public Page<Author> findAll(Pageable pageable) {
-        return null;
-    }
 }
