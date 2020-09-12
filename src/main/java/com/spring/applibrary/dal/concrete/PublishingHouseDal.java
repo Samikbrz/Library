@@ -1,7 +1,9 @@
-package com.spring.applibrary.dal;
+package com.spring.applibrary.dal.concrete;
 
+import com.spring.applibrary.dal.abstracts.PublishingHouseRepository;
 import com.spring.applibrary.model.Author;
 import com.spring.applibrary.model.PublishingHouse;
+import com.spring.applibrary.service.abstracts.PublishingHouseService;
 import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
@@ -18,7 +20,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public class PublishingHouseDal implements CrudRepository<PublishingHouse,Integer> {
+public class PublishingHouseDal implements PublishingHouseRepository {
 
     private final EntityManager entityManager;
 

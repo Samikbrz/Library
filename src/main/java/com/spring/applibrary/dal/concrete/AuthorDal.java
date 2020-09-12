@@ -1,5 +1,6 @@
-package com.spring.applibrary.dal;
+package com.spring.applibrary.dal.concrete;
 
+import com.spring.applibrary.dal.abstracts.AuthorRepository;
 import com.spring.applibrary.model.Author;
 import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,8 +16,7 @@ import javax.persistence.EntityManager;
 import java.util.List;
 import java.util.Optional;
 
-@Repository
-public class AuthorDal implements CrudRepository<Author,Integer> {
+public class AuthorDal implements AuthorRepository {
 
     private final EntityManager entityManager;
 

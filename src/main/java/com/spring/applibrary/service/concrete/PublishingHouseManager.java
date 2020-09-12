@@ -1,6 +1,7 @@
 package com.spring.applibrary.service.concrete;
 
-import com.spring.applibrary.dal.PublishingHouseDal;
+import com.spring.applibrary.dal.abstracts.PublishingHouseRepository;
+import com.spring.applibrary.dal.concrete.PublishingHouseDal;
 import com.spring.applibrary.model.PublishingHouse;
 import com.spring.applibrary.service.abstracts.PublishingHouseService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,15 +12,15 @@ import java.util.List;
 @Service
 public class PublishingHouseManager implements PublishingHouseService {
 
-    private final PublishingHouseDal publishingHouseDal;
+    private final PublishingHouseRepository publishingHouseRepository;
 
     @Autowired
-    public PublishingHouseManager(PublishingHouseDal publishingHouseDal) {
-        this.publishingHouseDal = publishingHouseDal;
+    public PublishingHouseManager(PublishingHouseRepository publishingHouseRepository) {
+        this.publishingHouseRepository = publishingHouseRepository;
     }
 
     @Override
     public List<PublishingHouse> getAll() {
-        return publishingHouseDal.findAll();
+        return (List<PublishingHouse>) publishingHouseRepository.findAll();
     }
 }

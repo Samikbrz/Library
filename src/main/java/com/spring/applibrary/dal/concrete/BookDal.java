@@ -1,5 +1,6 @@
-package com.spring.applibrary.dal;
+package com.spring.applibrary.dal.concrete;
 
+import com.spring.applibrary.dal.abstracts.BookRepository;
 import com.spring.applibrary.model.Book;
 import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +12,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public class BookDal implements CrudRepository<Book,Integer> {
+public class BookDal implements BookRepository {
 
     private final EntityManager entityManager;
 
