@@ -65,7 +65,7 @@ public class AuthorDal implements AuthorRepository {
     @Override
     public <S extends Author> S save(S s) {
         Session session= entityManager.unwrap(Session.class);
-        session.createQuery("" ,Author.class).getResultList();
+        session.createQuery("create " ,Author.class);
         return s;
     }
 

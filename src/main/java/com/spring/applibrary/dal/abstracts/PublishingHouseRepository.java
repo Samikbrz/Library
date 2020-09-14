@@ -5,6 +5,7 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface PublishingHouseRepository extends CrudRepository<PublishingHouse,Integer> {
+public interface PublishingHouseRepository
+        extends CrudRepository<PublishingHouse,Integer> {
 
 }

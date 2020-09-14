@@ -27,9 +27,8 @@ public class AuthorManager implements AuthorService {
     }
 
     @Override
-    public Author save(Author author) {
+    public void save(Author author) {
         authorRepository.save(author);
-        return author;
     }
 
 }

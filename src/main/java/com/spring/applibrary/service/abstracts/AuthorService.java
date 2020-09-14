@@ -6,5 +6,5 @@ import java.util.List;
 
 public interface AuthorService {
     List<Author> getAll();
-    Author save(Author author);
+    void save(Author author);
 }
