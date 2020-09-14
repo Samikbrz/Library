@@ -45,6 +45,12 @@ public class AuthorController {
             authorService.save(author);
         }
         return "redirect:/api/authors";
+    }    
+
+    @RequestMapping(value = "/deleteauthor",method = {RequestMethod.DELETE,RequestMethod.GET})
+    public String deleteAuthor(int id){
+        authorService.deleteById(id);
+        return "redirect:/api/authors";
     }
 }
 

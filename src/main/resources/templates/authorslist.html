@@ -25,8 +25,15 @@
             <td><span th:text="${author.id}"/></td>
             <td><span th:text="${author.authorName}"/></td>
             <td><span th:text="${author.description}"/></td>
-            <td> <button type="button" class="btn btn-primary">Güncelle</button></td>
-            <td> <button type="button" class="btn btn-danger">Sil</button></td>
+            <td>
+                <button type="button" class="btn btn-success">Güncelle</button>
+            </td>
+            <td>
+                <a th:href="@{/api/deleteauthor/(id=${author.id})}">
+                    <button type="button" class="btn btn-danger"
+                            onclick="return confirm('Silmek istediğinizden eminmisiniz?');" >Sil</button>
+                </a>
+            </td>
         </tr>
         </tbody>
     </table>
