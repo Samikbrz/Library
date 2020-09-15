@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class AuthorManager implements AuthorService {
@@ -32,10 +33,14 @@ public class AuthorManager implements AuthorService {
         authorRepository.save(author);
 
     }
-
     @Override
     public void deleteById(int id) {
         authorRepository.deleteById(id);
+    }
+
+    @Override
+    public Optional<Author> findById(int id) {
+        return authorRepository.findById(id);
     }
 
 }

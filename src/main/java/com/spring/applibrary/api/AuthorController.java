@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.sql.SQLOutput;
+import java.util.Optional;
 
 @Controller
 @RequestMapping("/api")
@@ -39,13 +40,23 @@ public class AuthorController {
         return modelAndView;
     }
 
-   @PostMapping("/savenewauthor")
+    @PostMapping("/savenewauthor")
     public String saveAuthor(Author author) {
-        if (author.getDescription()!=null){
-            authorService.save(author);
-        }
+        authorService.save(author);
         return "redirect:/api/authors";
-    }    
+    }
+
+    @RequestMapping("/findbyid")
+    @ResponseBody
+    public Optional<Author> findById(int id){
+         return authorService.findById(id);
+    }
+
+    @RequestMapping(value = "/updateauthor",method = {RequestMethod.PUT,RequestMethod.GET})
+    public String updateAuthor(Author author){
+        authorService.save(author);
+        return "redirect:/api/authors";
+    }
 
     @RequestMapping(value = "/deleteauthor",method = {RequestMethod.DELETE,RequestMethod.GET})
     public String deleteAuthor(int id){

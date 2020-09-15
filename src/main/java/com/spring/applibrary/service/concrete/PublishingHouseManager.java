@@ -23,4 +23,9 @@ public class PublishingHouseManager implements PublishingHouseService {
     public List<PublishingHouse> getAll() {
         return (List<PublishingHouse>) publishingHouseRepository.findAll();
     }
+
+    @Override
+    public void save(PublishingHouse publishingHouse) {
+        publishingHouseRepository.save(publishingHouse);
+    }
 }

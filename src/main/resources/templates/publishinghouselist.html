@@ -11,7 +11,7 @@
         <thead class="thead-dark">
         <tr>
             <th> Id </th>
-            <th> Publishing House Name </th>
+            <th> PublishingHouse Name </th>
             <th> Description </th>
             <th> Güncelle</th>
             <th> Sil</th>
@@ -19,18 +19,20 @@
         </thead>
         <tbody>
         <tr th:if="${publishinghouse.empty}">
-            <td colspan="2"> No Books Available </td>
+            <td colspan="2"> No PublishingHouses Available </td>
         </tr>
-        <tr th:each="book : ${publishinghouse}">
+        <tr th:each="publishingHouse : ${publishinghouse}">
             <td><span th:text="${publishinghouse.id}"/></td>
             <td><span th:text="${publishinghouse.publishingHouseName}"/></td>
             <td><span th:text="${publishinghouse.description}"/></td>
-            <td> <button type="button" class="btn btn-primary">Güncelle</button></td>
-            <td> <button type="button" class="btn btn-danger">Sil</button></td>
+            <td> <button type="button" class="btn btn-primary">Update</button></td>
+            <td> <button type="button" class="btn btn-danger">Delete</button></td>
         </tr>
         </tbody>
     </table>
-    <button type="button" class="btn btn-success">Yeni Yayın Evi Ekle</button>
+    <a th:href="addnewpublishinghouse">
+        <button type="button" class="btn btn-success">Add New PublishingHouse</button>
+    </a>
 </div>
 </body>
 </html>

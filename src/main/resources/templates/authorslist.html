@@ -26,18 +26,72 @@
             <td><span th:text="${author.authorName}"/></td>
             <td><span th:text="${author.description}"/></td>
             <td>
-                <button type="button" class="btn btn-success">Güncelle</button>
+                <a th:href="@{/api/findbyid/(id=${author.id})}">
+                    <button  type="button" class="btn btn-primary" data-toggle="modal" data-target="#editModal" id="editButton">
+                        Update
+                    </button>
+                </a>
             </td>
             <td>
                 <a th:href="@{/api/deleteauthor/(id=${author.id})}">
                     <button type="button" class="btn btn-danger"
-                            onclick="return confirm('Silmek istediğinizden eminmisiniz?');" >Sil</button>
+                            onclick="return confirm('Silmek istediğinizden eminmisiniz?');" >Delete</button>
                 </a>
             </td>
         </tr>
         </tbody>
     </table>
-    <a href="addnewauthor"><button type="button" class="btn btn-success">Yeni Yazar Ekle</button></a>
+    <a href="addnewauthor"><button type="button" class="btn btn-success">Add new author</button></a>
 </div>
+
+<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="ModalLabel">New message</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form th:action="@{/api/updateauthor}" method="put">
+                    <div class="form-group">
+                        <label class="col-form-label">Id</label>
+                        <input type="text" class="form-control" name="authorName" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label">Author Name</label>
+                        <input type="text" class="form-control" id="authornameEdit" name="authorName">
+                    </div>
+                    <div class="form-group">
+                        <label  class="col-form-label">Description</label>
+                        <input type="text" class="form-control" id="descriptionEdit" name="description">
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">Save</button>
+
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script >
+    $('document').ready(function (){
+        $('table #editButton'.on('click'),function (event){
+            event.preventDefault();
+            var href=$(this).attr('href');
+            $.get(href,function (author){
+                    $('#authornameEdit').val(author.authorName);
+                    $('#descriptionEdit').val(author.description);
+            });
+            $('#editModal').modal();
+        });
+    });
+</script>
 </body>
 </html>
