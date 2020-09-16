@@ -50,7 +50,4 @@ public class PublishingHouse {
     public void setDescription(String description) {
         this.description = description;
     }
-
-
-
 }

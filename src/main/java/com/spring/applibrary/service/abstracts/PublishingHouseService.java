@@ -7,4 +7,5 @@ import java.util.List;
 public interface PublishingHouseService {
     List<PublishingHouse> getAll();
     void save(PublishingHouse publishingHouse);
+    void deleteById(int id);
 }

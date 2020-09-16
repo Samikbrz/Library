@@ -40,4 +40,10 @@ public class PublishingHouseController {
         publishingHouseService.save(publishingHouse);
         return "redirect:/api/publishinghouse";
     }
+
+    @RequestMapping(value = "/deletepublishinghouse",method = {RequestMethod.DELETE,RequestMethod.GET})
+    public String deletePublishingHouse(int id){
+        publishingHouseService.deleteById(id);
+        return "redirect:/api/publishinghouse";
+    }
 }

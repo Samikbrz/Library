@@ -28,4 +28,9 @@ public class PublishingHouseManager implements PublishingHouseService {
     public void save(PublishingHouse publishingHouse) {
         publishingHouseRepository.save(publishingHouse);
     }
+
+    @Override
+    public void deleteById(int id) {
+        publishingHouseRepository.deleteById(id);
+    }
 }
