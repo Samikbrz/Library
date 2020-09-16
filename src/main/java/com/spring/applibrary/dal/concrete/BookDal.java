@@ -2,24 +2,13 @@ package com.spring.applibrary.dal.concrete;
 
 import com.spring.applibrary.dal.abstracts.BookRepository;
 import com.spring.applibrary.model.Book;
-import org.hibernate.Session;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import javax.persistence.EntityManager;
 import java.util.List;
 import java.util.Optional;
 
 @Repository
 public class BookDal implements BookRepository {
-
-    private final EntityManager entityManager;
-
-    @Autowired
-    public BookDal(EntityManager entityManager) {
-        this.entityManager = entityManager;
-    }
 
     @Override
     public <S extends Book> S save(S s) {
@@ -43,9 +32,7 @@ public class BookDal implements BookRepository {
 
     @Override
     public List<Book> findAll() {
-        Session session=entityManager.unwrap(Session.class);
-        List<Book> books=session.createQuery("select b from Book b",Book.class).getResultList();
-        return books;
+       return null;
     }
 
     @Override
@@ -77,6 +64,5 @@ public class BookDal implements BookRepository {
     public void deleteAll() {
 
     }
-
 
 }

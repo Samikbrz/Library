@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
@@ -38,6 +39,12 @@ public class BookController {
     @PostMapping("/savenewbook")
     public String saveBook(Book book) {
         bookService.save(book);
+        return "redirect:/api/books";
+    }
+
+    @RequestMapping(value = "/deletebook",method = {RequestMethod.DELETE,RequestMethod.GET})
+    public String deleteBook(int id){
+        bookService.deleteById(id);
         return "redirect:/api/books";
     }
 }

@@ -27,4 +27,9 @@ public class BookManager implements BookService {
     public void save(Book book) {
         bookRepository.save(book);
     }
+
+    @Override
+    public void deleteById(int id) {
+        bookRepository.deleteById(id);
+    }
 }

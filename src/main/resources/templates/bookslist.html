@@ -55,7 +55,12 @@
             <td><span th:text="${book.ISBNNumber}"/></td>
             <td><span th:text="${book.description}"/></td>
             <td> <button type="button" class="btn btn-primary">Edit</button></td>
-            <td> <button type="button" class="btn btn-danger">Delete</button></td>
+            <td>
+                <a th:href="@{/api/deletebook/(id=${book.id})}">
+                    <button type="button" class="btn btn-danger"
+                            onclick="return confirm('Are you sure delete this book?');">Delete</button>
+                </a>
+            </td>
         </tr>
         </tbody>
     </table>
