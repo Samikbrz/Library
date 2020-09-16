@@ -21,7 +21,7 @@
         <tr th:if="${publishinghouse.empty}">
             <td colspan="2"> No PublishingHouses Available </td>
         </tr>
-        <tr th:each="publishingHouse : ${publishinghouse}">
+        <tr th:each="publishinghouse : ${publishinghouse}">
             <td><span th:text="${publishinghouse.id}"/></td>
             <td><span th:text="${publishinghouse.publishingHouseName}"/></td>
             <td><span th:text="${publishinghouse.description}"/></td>

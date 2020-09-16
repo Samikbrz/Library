@@ -1,12 +1,11 @@
 package com.spring.applibrary.model;
 
-import com.sun.istack.NotNull;
-
 import javax.persistence.*;
 
 @Entity
 @Table(name = "author")
 public class Author {
+
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)

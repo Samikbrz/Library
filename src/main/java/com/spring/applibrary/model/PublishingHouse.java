@@ -1,7 +1,5 @@
 package com.spring.applibrary.model;
 
-import com.sun.istack.NotNull;
-
 import javax.persistence.*;
 
 @Entity
@@ -13,20 +11,21 @@ public class PublishingHouse {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @NotNull
     @Column(name = "publishing_house_name")
     private String publishingHouseName;
 
     @Column(name = "description")
     private String description;
 
-    public PublishingHouse(int id, String publishHouseName, String description) {
+
+    public PublishingHouse(int id, String publishingHouseName, String description) {
         this.id = id;
-        this.publishingHouseName = publishHouseName;
+        this.publishingHouseName = publishingHouseName;
         this.description = description;
     }
 
     public PublishingHouse(){}
+
 
     public int getId() {
         return id;
@@ -36,12 +35,12 @@ public class PublishingHouse {
         this.id = id;
     }
 
-    public String getPublishHouseName() {
+    public String getPublishingHouseName() {
         return publishingHouseName;
     }
 
-    public void setPublishHouseName(String publishHouseName) {
-        this.publishingHouseName = publishHouseName;
+    public void setPublishingHouseName(String publishingHouseName) {
+        this.publishingHouseName = publishingHouseName;
     }
 
     public String getDescription() {
@@ -51,5 +50,7 @@ public class PublishingHouse {
     public void setDescription(String description) {
         this.description = description;
     }
+
+
 
 }
