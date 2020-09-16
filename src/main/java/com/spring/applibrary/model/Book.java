@@ -1,7 +1,5 @@
 package com.spring.applibrary.model;
 
-import com.sun.istack.NotNull;
-
 import javax.persistence.*;
 
 @Entity
@@ -13,35 +11,26 @@ public class Book {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @NotNull
-    private String Name;
+    @Column(name = "name")
+    private String name;
 
-    private String SubName;
+    @Column(name = "sub_name")
+    private String subName;
 
-    @NotNull
-    private String SerialNo;
+    @Column(name = "serialNo")
+    private String serialNo;
 
-    @NotNull
-    private int author;
+    @Column(name = "author")
+    private String author;
 
-    @NotNull
+    @Column(name = "publishing_house")
     private String publishingHouse;
 
-    @NotNull
+    @Column(name = "isbnnumber")
     private String ISBNNumber;
 
+    @Column(name = "description")
     private String description;
-
-    public Book(int id, String name, String subName, String serialNo, int author, String publishingHouse, String isbnNumber, String description) {
-        this.id = id;
-        Name = name;
-        SubName = subName;
-        SerialNo = serialNo;
-        this.author = author;
-        this.publishingHouse = publishingHouse;
-        ISBNNumber = isbnNumber;
-        this.description = description;
-    }
 
     public Book(){}
 
@@ -54,34 +43,34 @@ public class Book {
     }
 
     public String getName() {
-        return Name;
+        return name;
     }
 
     public void setName(String name) {
-        Name = name;
+        this.name = name;
     }
 
     public String getSubName() {
-        return SubName;
+        return subName;
     }
 
     public void setSubName(String subName) {
-        SubName = subName;
+        this.subName = subName;
     }
 
     public String getSerialNo() {
-        return SerialNo;
+        return serialNo;
     }
 
     public void setSerialNo(String serialNo) {
-        SerialNo = serialNo;
+        this.serialNo = serialNo;
     }
 
-    public int getAuthor() {
+    public String getAuthor() {
         return author;
     }
 
-    public void setAuthor(int author) {
+    public void setAuthor(String author) {
         this.author = author;
     }
 
@@ -106,6 +95,17 @@ public class Book {
     }
 
     public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Book(int id, String name, String subName, String serialNo, String author, String publishingHouse, String isbnNumber, String description) {
+        this.id = id;
+        this.name = name;
+        this.subName = subName;
+        this.serialNo = serialNo;
+        this.author = author;
+        this.publishingHouse = publishingHouse;
+        ISBNNumber = isbnNumber;
         this.description = description;
     }
 

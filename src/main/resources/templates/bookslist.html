@@ -31,9 +31,14 @@
         <tr>
             <th> Id </th>
             <th> Book Name </th>
+            <th> Book Subname </th>
+            <th> Serial No </th>
+            <th> Author </th>
+            <th> Publishing House </th>
+            <th> ISBN Number </th>
             <th> Description </th>
-            <th> Güncelle</th>
-            <th> Sil</th>
+            <th> Update</th>
+            <th> Delete</th>
         </tr>
         </thead>
         <tbody>
@@ -43,13 +48,20 @@
         <tr th:each="book : ${book}">
             <td><span th:text="${book.id}"/></td>
             <td><span th:text="${book.name}"/></td>
+            <td><span th:text="${book.subName}"/></td>
+            <td><span th:text="${book.serialNo}"/></td>
+            <td><span th:text="${book.author}"/></td>
+            <td><span th:text="${book.publishingHouse}"/></td>
+            <td><span th:text="${book.ISBNNumber}"/></td>
             <td><span th:text="${book.description}"/></td>
-            <td> <button type="button" class="btn btn-primary">Güncelle</button></td>
-            <td> <button type="button" class="btn btn-danger">Sil</button></td>
+            <td> <button type="button" class="btn btn-primary">Edit</button></td>
+            <td> <button type="button" class="btn btn-danger">Delete</button></td>
         </tr>
         </tbody>
     </table>
-    <button type="button" class="btn btn-success">Yeni Kitap Ekle</button>
+    <a th:href="addnewbook">
+        <button type="button" class="btn btn-success">Add New Book</button>
+    </a>
 </div>
 </body>
 </html>
