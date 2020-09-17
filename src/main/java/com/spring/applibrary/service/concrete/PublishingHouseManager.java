@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class PublishingHouseManager implements PublishingHouseService {
@@ -31,5 +32,15 @@ public class PublishingHouseManager implements PublishingHouseService {
     @Override
     public void deleteById(int id) {
         publishingHouseRepository.deleteById(id);
+    }
+
+    @Override
+    public Optional<PublishingHouse> findById(int id) {
+        return publishingHouseRepository.findById(id);
+    }
+
+    @Override
+    public void update(PublishingHouse publishingHouse) {
+        publishingHouseRepository.save(publishingHouse);
     }
 }

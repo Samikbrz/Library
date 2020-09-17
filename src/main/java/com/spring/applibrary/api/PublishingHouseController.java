@@ -8,7 +8,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
+
+import java.util.Optional;
 
 @Controller
 @RequestMapping("/api")
@@ -29,6 +32,14 @@ public class PublishingHouseController {
         return modelAndView;
     }
 
+    @RequestMapping("/findbypublishinghouseid")
+    @ResponseBody
+    public Optional<PublishingHouse> findById(int id)
+    {
+        Optional<PublishingHouse> result = publishingHouseService.findById(id);
+        return result;
+    }
+
     @RequestMapping("/addnewpublishinghouse")
     public ModelAndView newAuthorIndex() {
         modelAndView.setViewName("addnewpublishinghouse");
@@ -44,6 +55,12 @@ public class PublishingHouseController {
     @RequestMapping(value = "/deletepublishinghouse",method = {RequestMethod.DELETE,RequestMethod.GET})
     public String deletePublishingHouse(int id){
         publishingHouseService.deleteById(id);
+        return "redirect:/api/publishinghouse";
+    }
+
+    @RequestMapping(value = "/updatepublishinghouse",method = {RequestMethod.PUT,RequestMethod.GET})
+    public String updatePublishingHouse(PublishingHouse publishingHouse){
+        publishingHouseService.update(publishingHouse);
         return "redirect:/api/publishinghouse";
     }
 }
