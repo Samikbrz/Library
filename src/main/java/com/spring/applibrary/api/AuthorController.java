@@ -13,7 +13,7 @@ import java.util.Optional;
 @RequestMapping("/api")
 public class AuthorController {
 
-    private final AuthorService authorService;
+    private AuthorService authorService;
     private final ModelAndView modelAndView=new ModelAndView();
 
     @Autowired
@@ -21,10 +21,7 @@ public class AuthorController {
         this.authorService = authorService;
     }
 
-    @RequestMapping("/Index")
-    public String index(){
-        return null;
-    }
+    public AuthorController() { }
 
     @RequestMapping(value = "/authors",method = RequestMethod.GET)
     public ModelAndView getAll() {

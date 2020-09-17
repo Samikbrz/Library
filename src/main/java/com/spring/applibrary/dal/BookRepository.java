@@ -11,6 +11,9 @@ import java.util.List;
 @Repository
 public interface BookRepository extends CrudRepository<Book,Integer> {
 
-    @Query(value="select * from book b WHERE b.name LIKE %:keyword%", nativeQuery = true)
+    @Query(value="select * from book b WHERE b.name LIKE %:keyword% " +
+            "or b.author LIKE %:keyword% " +
+            "or b.isbnnumber LIKE %:keyword% " +
+            "or b.serial_no LIKE %:keyword%", nativeQuery = true)
     List<Book> findByKeyword(@Param("keyword") String keyword);
 }
