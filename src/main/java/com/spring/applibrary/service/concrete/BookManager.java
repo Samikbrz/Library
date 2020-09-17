@@ -32,4 +32,9 @@ public class BookManager implements BookService {
     public void deleteById(int id) {
         bookRepository.deleteById(id);
     }
+
+    @Override
+    public List<Book> findByKeyword(String keyword) {
+        return bookRepository.findByKeyword(keyword);
+    }
 }

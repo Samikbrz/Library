@@ -7,16 +7,22 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 import java.util.Optional;
 
+
 @Repository
 public class BookDal implements BookRepository {
 
     @Override
-    public <S extends Book> S save(S s) {
+    public List<Book> findByKeyword(String keyword) {
         return null;
     }
 
     @Override
-    public <S extends Book> Iterable<S> saveAll(Iterable<S> iterable) {
+    public <S extends Book> S save(S entity) {
+        return null;
+    }
+
+    @Override
+    public <S extends Book> Iterable<S> saveAll(Iterable<S> entities) {
         return null;
     }
 
@@ -31,12 +37,12 @@ public class BookDal implements BookRepository {
     }
 
     @Override
-    public List<Book> findAll() {
-       return null;
+    public Iterable<Book> findAll() {
+        return null;
     }
 
     @Override
-    public Iterable<Book> findAllById(Iterable<Integer> iterable) {
+    public Iterable<Book> findAllById(Iterable<Integer> integers) {
         return null;
     }
 
@@ -51,12 +57,12 @@ public class BookDal implements BookRepository {
     }
 
     @Override
-    public void delete(Book book) {
+    public void delete(Book entity) {
 
     }
 
     @Override
-    public void deleteAll(Iterable<? extends Book> iterable) {
+    public void deleteAll(Iterable<? extends Book> entities) {
 
     }
 
@@ -64,5 +70,4 @@ public class BookDal implements BookRepository {
     public void deleteAll() {
 
     }
-
 }

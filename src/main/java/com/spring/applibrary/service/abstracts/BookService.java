@@ -9,4 +9,5 @@ public interface BookService {
     List<Book> getAll();
     void save(Book book);
     void deleteById(int id);
+    List<Book> findByKeyword(String keyword);
 }
