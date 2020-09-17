@@ -55,7 +55,7 @@ public class AuthorController {
 
     @RequestMapping(value = "/updateauthor",method = {RequestMethod.PUT,RequestMethod.GET})
     public String updateAuthor(Author author){
-        authorService.save(author);
+        authorService.update(author);
         return "redirect:/api/authors";
     }
 

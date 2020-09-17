@@ -29,8 +29,13 @@ public class AuthorManager implements AuthorService {
     @Override
     public void save(Author author) {
         authorRepository.save(author);
-
     }
+
+    @Override
+    public void update(Author author) {
+        authorRepository.save(author);
+    }
+
     @Override
     public void deleteById(int id) {
         authorRepository.deleteById(id);
