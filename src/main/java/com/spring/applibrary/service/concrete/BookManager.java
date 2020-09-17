@@ -1,9 +1,7 @@
 package com.spring.applibrary.service.concrete;
 
-import com.spring.applibrary.dal.abstracts.BookRepository;
-import com.spring.applibrary.dal.concrete.BookDal;
+import com.spring.applibrary.dal.BookRepository;
 import com.spring.applibrary.model.Book;
-import com.spring.applibrary.model.PublishingHouse;
 import com.spring.applibrary.service.abstracts.BookService;
 import org.springframework.stereotype.Service;
 

@@ -1,7 +1,6 @@
 package com.spring.applibrary.service.concrete;
 
-import com.spring.applibrary.dal.abstracts.PublishingHouseRepository;
-import com.spring.applibrary.dal.concrete.PublishingHouseDal;
+import com.spring.applibrary.dal.PublishingHouseRepository;
 import com.spring.applibrary.model.PublishingHouse;
 import com.spring.applibrary.service.abstracts.PublishingHouseService;
 import org.springframework.beans.factory.annotation.Autowired;

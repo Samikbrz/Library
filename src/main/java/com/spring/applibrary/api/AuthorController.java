@@ -47,8 +47,10 @@ public class AuthorController {
 
     @RequestMapping("/findbyid")
     @ResponseBody
-    public Optional<Author> findById(int id){
-         return authorService.findById(id);
+    public Optional<Author> findById(int id)
+    {
+         Optional<Author> result = authorService.findById(id);
+         return result;
     }
 
     @RequestMapping(value = "/updateauthor",method = {RequestMethod.PUT,RequestMethod.GET})

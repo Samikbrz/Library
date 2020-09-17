@@ -1,10 +1,8 @@
 package com.spring.applibrary.service.concrete;
 
-import com.spring.applibrary.dal.abstracts.AuthorRepository;
-import com.spring.applibrary.dal.concrete.AuthorDal;
+import com.spring.applibrary.dal.AuthorRepository;
 import com.spring.applibrary.model.Author;
 import com.spring.applibrary.service.abstracts.AuthorService;
-import com.sun.xml.bind.v2.model.core.ID;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

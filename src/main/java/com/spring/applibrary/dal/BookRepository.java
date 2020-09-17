@@ -1,4 +1,4 @@
-package com.spring.applibrary.dal.abstracts;
+package com.spring.applibrary.dal;
 
 import com.spring.applibrary.model.Book;
 import org.springframework.data.jpa.repository.Query;
@@ -11,6 +11,6 @@ import java.util.List;
 @Repository
 public interface BookRepository extends CrudRepository<Book,Integer> {
 
-    @Query("SELECT b FROM Book b WHERE b.name LIKE '%:keyword%'")
-    List<Book> findByKeyword(String keyword);
+    @Query(value="select * from book b WHERE b.name LIKE %:keyword%", nativeQuery = true)
+    List<Book> findByKeyword(@Param("keyword") String keyword);
 }

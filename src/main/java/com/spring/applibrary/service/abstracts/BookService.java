@@ -1,7 +1,6 @@
 package com.spring.applibrary.service.abstracts;
 
 import com.spring.applibrary.model.Book;
-import com.spring.applibrary.model.PublishingHouse;
 
 import java.util.List;
 

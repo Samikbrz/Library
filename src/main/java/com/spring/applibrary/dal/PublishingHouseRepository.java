@@ -1,4 +1,4 @@
-package com.spring.applibrary.dal.abstracts;
+package com.spring.applibrary.dal;
 
 import com.spring.applibrary.model.PublishingHouse;
 import org.springframework.data.repository.CrudRepository;

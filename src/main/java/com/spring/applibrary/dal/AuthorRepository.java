@@ -1,4 +1,4 @@
-package com.spring.applibrary.dal.abstracts;
+package com.spring.applibrary.dal;
 
 import com.spring.applibrary.model.Author;
 import org.springframework.data.repository.CrudRepository;
