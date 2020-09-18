@@ -1,12 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -17,39 +10,25 @@
     <div class="container" >
         <div class="col-md-6">
             <h2 style="margin-top:10px;">Add New Book</h2>
-            <form th:action="@{/api/savenewbook}" method="POST" style="margin-top: 10px;margin-left: 10px;">
+            <form th:action="@{/api/savenewbook}" method="POST" style="margin-top: 10px; margin-left: 10px;">
                 <label>Book Name</label>
-                <td>
-                    <input type="text" name="name" class="form-control" required>
-                </td>
+                <input type="text" name="name" class="form-control" required>
                 <label>Book Subname</label>
-                <td>
-                    <input type="text" name="subName" class="form-control" required>
-                </td>
+                <input type="text" name="subName" class="form-control" required>
                 <label>Serial No</label>
-                <td>
-                    <input type="text" name="serialNo" class="form-control" required>
-                </td>
+                <input type="text" name="serialNo" class="form-control" required>
                 <label>Author</label>
-                <td>
-                    <select class="form-control" th:field="*{author}" name="author">
-                        <option  th:each="a :${author}" th:value="${a}" th:text="${a.getAuthorName()}"></option>
-                    </select>
-                </td>
+                <select class="form-control" th:field="*{author}" name="author">
+                    <option  th:each="a :${author}" th:value="${a}" th:text="${a.getAuthorName()}"></option>
+                </select>
                 <label>Publishing House</label>
-                <td>
-                    <select class="form-control" th:field="*{publishingHouse}">
-                        <option name="publishingHouse" th:each="p :${publishingHouse}" th:value="${p}" th:text="${p.getPublishingHouseName()}"></option>
-                    </select>
-                </td>
+                <select class="form-control" th:field="*{publishingHouse}">
+                    <option name="publishingHouse" th:each="p :${publishingHouse}" th:value="${p}" th:text="${p.getPublishingHouseName()}"></option>
+                </select>
                 <label>ISBN Number</label>
-                <td>
-                    <input type="text" name="ISBNNumber" class="form-control" required>
-                </td>
+                <input type="text" name="ISBNNumber" class="form-control" required>
                 <label>Description</label>
-                <td>
-                    <input type="text" name="description"  class="form-control" required>
-                </td>
+                <input type="text" name="description"  class="form-control" required>
                 <br>
                 <button type="submit" class="btn btn-primary">Add</button>
             </form>
