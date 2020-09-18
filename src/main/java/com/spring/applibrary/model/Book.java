@@ -11,25 +11,12 @@ public class Book {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "name")
     private String name;
-
-    @Column(name = "sub_name")
     private String subName;
-
-    @Column(name = "serialNo")
     private String serialNo;
-
-    @Column(name = "author")
     private String author;
-
-    @Column(name = "publishing_house")
     private String publishingHouse;
-
-    @Column(name = "isbnnumber")
     private String ISBNNumber;
-
-    @Column(name = "description")
     private String description;
 
     public Book(){}

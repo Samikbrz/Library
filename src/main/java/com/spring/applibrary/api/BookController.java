@@ -7,7 +7,6 @@ import com.spring.applibrary.service.abstracts.AuthorService;
 import com.spring.applibrary.service.abstracts.BookService;
 
 import com.spring.applibrary.service.abstracts.PublishingHouseService;
-import org.dom4j.rule.Mode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
@@ -16,7 +15,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 import java.util.Optional;
@@ -28,7 +26,6 @@ public class BookController {
     private final BookService bookService;
     private final AuthorService authorService;
     private final PublishingHouseService publishingHouseService;
-    private final ModelAndView modelAndView=new ModelAndView();
 
     @Autowired
     public BookController(BookService bookService, AuthorService authorService, PublishingHouseService publishingHouseService) {
@@ -75,14 +72,12 @@ public class BookController {
 
     @RequestMapping("/findbybookid")
     @ResponseBody
-    public Optional<Book> findById(int id)
-    {
-        Optional<Book> result = bookService.findById(id);
-        return result;
+    public Optional<Book> findById(int id){
+        return bookService.findById(id);
     }
 
     @RequestMapping(value = "/updatebook",method = {RequestMethod.PUT,RequestMethod.GET})
-    public String updateBook(Model model, Book book){
+    public String updateBook(Book book){
         bookService.update(book);
         return "redirect:/api/books";
     }

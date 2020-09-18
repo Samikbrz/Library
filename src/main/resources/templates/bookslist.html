@@ -46,7 +46,7 @@
             <td colspan="2"> No Books Available </td>
         </tr>
         <tr th:each="book : ${book}">
-            <td><span th:text="${book.id}"/></td>
+            <td><span th:text="${book.id}"></span></td>
             <td><span th:text="${book.name}"/></td>
             <td><span th:text="${book.subName}"/></td>
             <td><span th:text="${book.serialNo}"/></td>

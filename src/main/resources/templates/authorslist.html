@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Authors</title>
@@ -31,9 +31,6 @@
         </tr>
         </thead>
         <tbody>
-        <tr th:if="${author.empty}">
-            <td colspan="2"> No Authors Available </td>
-        </tr>
         <tr th:each="author : ${author}">
             <td><span th:text="${author.id}"/></td>
             <td><span th:text="${author.authorName}"/></td>
