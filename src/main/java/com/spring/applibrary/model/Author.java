@@ -11,8 +11,10 @@ public class Author {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
+    @Column(name = "author_name")
     private String authorName;
 
+    @Column(name = "description")
     private String description;
 
     public Author(int id,String authorName, String description) {

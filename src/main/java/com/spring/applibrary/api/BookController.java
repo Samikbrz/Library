@@ -1,9 +1,12 @@
 package com.spring.applibrary.api;
 
+import com.spring.applibrary.model.Author;
 import com.spring.applibrary.model.Book;
 import com.spring.applibrary.model.PublishingHouse;
+import com.spring.applibrary.service.abstracts.AuthorService;
 import com.spring.applibrary.service.abstracts.BookService;
 
+import com.spring.applibrary.service.abstracts.PublishingHouseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
@@ -11,19 +14,24 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+
+import java.util.List;
 
 @Controller
 @RequestMapping("/api")
 public class BookController {
 
     private final BookService bookService;
+    private final AuthorService authorService;
+    private final PublishingHouseService publishingHouseService;
     private final ModelAndView modelAndView=new ModelAndView();
 
     @Autowired
-    public BookController(BookService bookService) {
+    public BookController(BookService bookService, AuthorService authorService, PublishingHouseService publishingHouseService) {
         this.bookService = bookService;
+        this.authorService = authorService;
+        this.publishingHouseService = publishingHouseService;
     }
 
     @RequestMapping("/books")
@@ -38,9 +46,12 @@ public class BookController {
     }
 
     @RequestMapping("/addnewbook")
-    public ModelAndView newBooksIndex() {
-        modelAndView.setViewName("addnewbook");
-        return modelAndView;
+    public String newBooksIndex(Model model) {
+        List<Author> authors=authorService.getAll();
+        List<PublishingHouse> publishingHouses=publishingHouseService.getAll();
+        model.addAttribute("publishingHouse",publishingHouses);
+        model.addAttribute("author",authors);
+        return "addnewbook";
     }
 
     @PostMapping("/savenewbook")
