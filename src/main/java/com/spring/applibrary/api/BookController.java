@@ -7,6 +7,7 @@ import com.spring.applibrary.service.abstracts.AuthorService;
 import com.spring.applibrary.service.abstracts.BookService;
 
 import com.spring.applibrary.service.abstracts.PublishingHouseService;
+import org.dom4j.rule.Mode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
@@ -14,9 +15,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 @RequestMapping("/api")
@@ -36,6 +39,10 @@ public class BookController {
 
     @RequestMapping("/books")
     public String getAll(Model model,@Param("keyword") String keyword ){
+        List<Author> authors=authorService.getAll();
+        List<PublishingHouse> publishingHouses=publishingHouseService.getAll();
+        model.addAttribute("publishingHouse",publishingHouses);
+        model.addAttribute("author",authors);
         if (keyword!=null){
             model.addAttribute("book",bookService.findByKeyword(keyword));
         }
@@ -63,6 +70,20 @@ public class BookController {
     @RequestMapping(value = "/deletebook",method = {RequestMethod.DELETE,RequestMethod.GET})
     public String deleteBook(int id){
         bookService.deleteById(id);
+        return "redirect:/api/books";
+    }
+
+    @RequestMapping("/findbybookid")
+    @ResponseBody
+    public Optional<Book> findById(int id)
+    {
+        Optional<Book> result = bookService.findById(id);
+        return result;
+    }
+
+    @RequestMapping(value = "/updatebook",method = {RequestMethod.PUT,RequestMethod.GET})
+    public String updateBook(Model model, Book book){
+        bookService.update(book);
         return "redirect:/api/books";
     }
 }

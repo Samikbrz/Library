@@ -19,25 +19,37 @@
             <h2 style="margin-top:10px;">Add New Book</h2>
             <form th:action="@{/api/savenewbook}" method="POST" style="margin-top: 10px;margin-left: 10px;">
                 <label>Book Name</label>
-                <td><input type="text" name="name" class="form-control" required></td>
+                <td>
+                    <input type="text" name="name" class="form-control" required>
+                </td>
                 <label>Book Subname</label>
-                <td><input type="text" name="subName" class="form-control" required></td>
+                <td>
+                    <input type="text" name="subName" class="form-control" required>
+                </td>
                 <label>Serial No</label>
-                <td><input type="text" name="serialNo" class="form-control" required></td>
+                <td>
+                    <input type="text" name="serialNo" class="form-control" required>
+                </td>
                 <label>Author</label>
-                    <select class="form-control" th:field="*{author}">
-                        <option th:each="a :${author}" th:value="${a}" th:text="${a.getAuthorName()}"></option>
+                <td>
+                    <select class="form-control" th:field="*{author}" name="author">
+                        <option  th:each="a :${author}" th:value="${a}" th:text="${a.getAuthorName()}"></option>
                     </select>
+                </td>
                 <label>Publishing House</label>
                 <td>
                     <select class="form-control" th:field="*{publishingHouse}">
-                        <option th:each="p :${publishingHouse}" th:value="${p}" th:text="${p.getPublishingHouseName()}"></option>
+                        <option name="publishingHouse" th:each="p :${publishingHouse}" th:value="${p}" th:text="${p.getPublishingHouseName()}"></option>
                     </select>
                 </td>
                 <label>ISBN Number</label>
-                <td><input type="text" name="ISBNNumber" class="form-control" required></td>
+                <td>
+                    <input type="text" name="ISBNNumber" class="form-control" required>
+                </td>
                 <label>Description</label>
-                <td><input type="text" name="description"  class="form-control" required></td>
+                <td>
+                    <input type="text" name="description"  class="form-control" required>
+                </td>
                 <br>
                 <button type="submit" class="btn btn-primary">Add</button>
             </form>

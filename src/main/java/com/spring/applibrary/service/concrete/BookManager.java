@@ -6,6 +6,7 @@ import com.spring.applibrary.service.abstracts.BookService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class BookManager implements BookService {
@@ -34,5 +35,15 @@ public class BookManager implements BookService {
     @Override
     public List<Book> findByKeyword(String keyword) {
         return bookRepository.findByKeyword(keyword);
+    }
+
+    @Override
+    public Optional<Book> findById(int id) {
+        return bookRepository.findById(id);
+    }
+    
+    @Override
+    public void update(Book book) {
+        bookRepository.save(book);
     }
 }

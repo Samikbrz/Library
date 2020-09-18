@@ -99,10 +99,10 @@
         $('table #editButton').on('click', function (event){
             event.preventDefault();
             var href=$(this).parent().attr('href');
-            $.get(href, function(author) {
-                    $('#idEdit').val(author.id);
-                    $('#publishinghousenameEdit').val(author.publishingHouseName);
-                    $('#descriptionEdit').val(author.description);
+            $.get(href, function(publihingHouse) {
+                    $('#idEdit').val(publihingHouse.id);
+                    $('#publishinghousenameEdit').val(publihingHouse.publishingHouseName);
+                    $('#descriptionEdit').val(publihingHouse.description);
             });
             $('#editModal').modal('show');
         });
