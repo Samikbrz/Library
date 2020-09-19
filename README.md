@@ -17,7 +17,7 @@ DROP TABLE IF EXISTS `author`;
 
 CREATE TABLE `author` (
 
-  `id` int NOT NULL AUTO_INCREMENT,
+  "id" int NOT NULL AUTO_INCREMENT,
   
   `author_name` varchar(255) DEFAULT NULL,
   
@@ -37,15 +37,25 @@ CREATE TABLE `author` (
 DROP TABLE IF EXISTS `book`;
 
 CREATE TABLE `book` (
+
   `id` int NOT NULL AUTO_INCREMENT,
+  
   `isbnnumber` varchar(255) DEFAULT NULL,
+  
   `name` varchar(255) DEFAULT NULL,
+  
   `serial_no` varchar(255) DEFAULT NULL,
+  
   `sub_name` varchar(255) DEFAULT NULL,
+  
   `author` varchar(50) DEFAULT NULL,
+  
   `description` varchar(255) DEFAULT NULL,
+  
   `publishing_house` varchar(255) DEFAULT NULL,
+  
   PRIMARY KEY (`id`)
+  
 ) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
@@ -55,8 +65,13 @@ CREATE TABLE `book` (
 DROP TABLE IF EXISTS `publishing_house`;
 
 CREATE TABLE `publishing_house` (
+
   `id` int NOT NULL AUTO_INCREMENT,
+  
   `description` varchar(255) DEFAULT NULL,
+  
   `publishing_house_name` varchar(255) DEFAULT NULL,
+  
   PRIMARY KEY (`id`)
+  
 ) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
