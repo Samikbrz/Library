@@ -9,9 +9,9 @@
 # Proje Kurulum
 :heavy_check_mark: Öncelikle veritabanımızda çalıştırmamız greken sql sorgusunu yazalım.
 
---
+
 -- Table structure for table `author`
---
+
 
 DROP TABLE IF EXISTS `author`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
