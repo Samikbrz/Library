@@ -7,6 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @Controller
@@ -38,7 +40,16 @@ public class AuthorController {
 
     @PostMapping("/savenewauthor")
     public String saveAuthor(Author author) {
-        authorService.save(author);
+        boolean isexist=false;
+        List<Author> authors=authorService.getAll();
+        for (int i=0;i<authors.size();i++){
+            if (authors.get(i).getAuthorName().contains(author.getAuthorName())){
+                isexist=true;
+            }
+        }
+        if (isexist==false){
+            authorService.save(author);
+        }
         return "redirect:/api/authors";
     }
 

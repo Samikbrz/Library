@@ -1,5 +1,6 @@
 package com.spring.applibrary.api;
 
+import com.spring.applibrary.model.Author;
 import com.spring.applibrary.model.PublishingHouse;
 import com.spring.applibrary.service.abstracts.AuthorService;
 import com.spring.applibrary.service.abstracts.PublishingHouseService;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.List;
 import java.util.Optional;
 
 @Controller
@@ -49,7 +51,16 @@ public class PublishingHouseController {
 
     @PostMapping("/savenewpublishinghouse")
     public String savePublishingHouse(PublishingHouse publishingHouse) {
-        publishingHouseService.save(publishingHouse);
+        boolean isexist=false;
+        List<PublishingHouse> publishingHouses=publishingHouseService.getAll();
+        for (int i=0;i<publishingHouses.size();i++){
+            if (publishingHouses.get(i).getPublishingHouseName().contains(publishingHouse.getPublishingHouseName())){
+                isexist=true;
+            }
+        }
+        if (isexist==false){
+            publishingHouseService.save(publishingHouse);
+        }
         return "redirect:/api/publishinghouse";
     }
 

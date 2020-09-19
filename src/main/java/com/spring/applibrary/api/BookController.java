@@ -51,10 +51,10 @@ public class BookController {
 
     @RequestMapping("/addnewbook")
     public String newBooksIndex(Model model) {
-        List<Author> authors=authorService.getAll();
+        List<Author> authors = authorService.getAll();
         List<PublishingHouse> publishingHouses=publishingHouseService.getAll();
         model.addAttribute("publishingHouse",publishingHouses);
-        model.addAttribute("author",authors);
+        model.addAttribute("authors",authors);
         return "addnewbook";
     }
 

@@ -18,12 +18,12 @@
                 <label>Serial No</label>
                 <input type="text" name="serialNo" class="form-control" required>
                 <label>Author</label>
-                <select class="form-control" th:field="*{author}" name="author">
-                    <option  th:each="a :${author}" th:value="${a}" th:text="${a.getAuthorName()}"></option>
+                <select class="form-control" th:field="*{authors}" name="author" >
+                    <option  th:each="b :${authors}" th:value="${b.authorName}" th:text="${b.authorName}"></option>
                 </select>
                 <label>Publishing House</label>
                 <select class="form-control" th:field="*{publishingHouse}">
-                    <option name="publishingHouse" th:each="p :${publishingHouse}" th:value="${p}" th:text="${p.getPublishingHouseName()}"></option>
+                    <option name="publishingHouse" th:each="p :${publishingHouse}" th:value="${p.publishingHouseName}" th:text="${p.getPublishingHouseName()}"></option>
                 </select>
                 <label>ISBN Number</label>
                 <input type="text" name="ISBNNumber" class="form-control" required>
