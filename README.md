@@ -13,19 +13,19 @@
 -- Table structure for table `author`
 --
 
-DROP TABLE IF EXISTS `author`;
+DROP TABLE IF EXISTS author;
 
-CREATE TABLE `author` (
+CREATE TABLE "author" (
 
   "id" int NOT NULL AUTO_INCREMENT,
   
-  `author_name` varchar(255) DEFAULT NULL,
+  "author_name" varchar(255) DEFAULT NULL,
   
-  `description` varchar(255) DEFAULT NULL,
+  "description" varchar(255) DEFAULT NULL,
   
-  `author` varchar(255) DEFAULT NULL,
+  "author" varchar(255) DEFAULT NULL,
   
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (id)
   
 ) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
@@ -34,25 +34,25 @@ CREATE TABLE `author` (
 -- Table structure for table `book`
 --
 
-DROP TABLE IF EXISTS `book`;
+DROP TABLE IF EXISTS "book";
 
-CREATE TABLE `book` (
+CREATE TABLE book(
 
-  `id` int NOT NULL AUTO_INCREMENT,
+  "id" int NOT NULL AUTO_INCREMENT,
   
-  `isbnnumber` varchar(255) DEFAULT NULL,
+  "isbnnumber" varchar(255) DEFAULT NULL,
   
-  `name` varchar(255) DEFAULT NULL,
+  "name" varchar(255) DEFAULT NULL,
   
-  `serial_no` varchar(255) DEFAULT NULL,
+  "erial_no" varchar(255) DEFAULT NULL,
   
-  `sub_name` varchar(255) DEFAULT NULL,
+  "sub_name" varchar(255) DEFAULT NULL,
   
-  `author` varchar(50) DEFAULT NULL,
+  "author" varchar(50) DEFAULT NULL,
   
-  `description` varchar(255) DEFAULT NULL,
+  "description" varchar(255) DEFAULT NULL,
   
-  `publishing_house` varchar(255) DEFAULT NULL,
+  "publishing_house" varchar(255) DEFAULT NULL,
   
   PRIMARY KEY (`id`)
   
@@ -62,16 +62,16 @@ CREATE TABLE `book` (
 -- Table structure for table `publishing_house`
 --
 
-DROP TABLE IF EXISTS `publishing_house`;
+DROP TABLE IF EXISTS "publishing_house";
 
-CREATE TABLE `publishing_house` (
+CREATE TABLE publishing_house (
 
-  `id` int NOT NULL AUTO_INCREMENT,
+  "id" int NOT NULL AUTO_INCREMENT,
   
-  `description` varchar(255) DEFAULT NULL,
+  "description" varchar(255) DEFAULT NULL,
   
-  `publishing_house_name` varchar(255) DEFAULT NULL,
+  "publishing_house_name" varchar(255) DEFAULT NULL,
   
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (id)
   
 ) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
