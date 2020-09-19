@@ -45,24 +45,24 @@
         <tr th:if="${book.empty}">
             <td colspan="2"> No Books Available </td>
         </tr>
-        <tr th:each="book : ${book}">
-            <td><span th:text="${book.id}"></span></td>
-            <td><span th:text="${book.name}"/></td>
-            <td><span th:text="${book.subName}"/></td>
-            <td><span th:text="${book.serialNo}"/></td>
-            <td><span th:text="${book.author}"/></td>
-            <td><span th:text="${book.publishingHouse}"/></td>
-            <td><span th:text="${book.ISBNNumber}"/></td>
-            <td><span th:text="${book.description}"/></td>
+        <tr th:each="b : ${book}">
+            <td><span th:text="${b.id}"></span></td>
+            <td><span th:text="${b.name}"/></td>
+            <td><span th:text="${b.subName}"/></td>
+            <td><span th:text="${b.serialNo}"/></td>
+            <td><span th:text="${b.author}"/></td>
+            <td><span th:text="${b.publishingHouse}"/></td>
+            <td><span th:text="${b.isbnnumber}"/></td>
+            <td><span th:text="${b.description}"/></td>
             <td>
-                <a th:href="@{/api/findbybookid/(id=${book.id})}">
+                <a th:href="@{/api/findbybookid/(id=${b.id})}">
                     <button  type="button" class="btn btn-primary" data-toggle="modal" data-target="#editModal" id="editButton">
                         Edit
                     </button>
                 </a>
             </td>
             <td>
-                <a th:href="@{/api/deletebook/(id=${book.id})}">
+                <a th:href="@{/api/deletebook/(id=${b.id})}">
                     <button type="button" class="btn btn-danger"
                             onclick="return confirm('Are you sure delete this book?');">Delete</button>
                 </a>
@@ -103,19 +103,19 @@
                     </div>
                     <div class="form-group">
                         <label class="col-form-label">Author</label>
-                        <select class="form-control" th:field="*{author}">
-                            <option id="authorEdit" th:each="a :${author}" th:value="${a}" th:text="${a.getAuthorName()}"></option>
+                        <select class="form-control" name="author">
+                            <option class="authorEdit" th:each="a :${author}" th:value="${a.getAuthorName()}" th:text="${a.getAuthorName()}"></option>
                         </select>
                     </div>
                     <div>
                         <label class="col-form-label">Publishing House</label>
-                        <select class="form-control" th:field="*{publishingHouse}">
-                            <option id="publishingHouseEdit" th:each="p :${publishingHouse}" th:value="${p}" th:text="${p.getPublishingHouseName()}"></option>
+                        <select class="form-control" name="publishingHouse">
+                            <option class="publishingHouseEdit" th:each="p :${publishingHouse}" th:value="${p.getPublishingHouseName()}" th:text="${p.getPublishingHouseName()}"></option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label class="col-form-label">ISBN Number</label>
-                        <input type="text" class="form-control" id="ISBNNumberEdit" name="ISBNNumber">
+                        <input type="text" class="form-control" id="isbnnumberEdit" name="isbnnumber">
                     </div>
                     <div class="form-group">
                         <label class="col-form-label">Description</label>
@@ -138,17 +138,17 @@
         $('table #editButton').on('click', function (event){
             event.preventDefault();
             var href=$(this).parent().attr('href');
-            $.get(href, function(book) {
+            $('#editModal').modal('show');
+            $.get(href).done(function(book) {
                 $('#idEdit').val(book.id);
                 $('#nameEdit').val(book.name);
                 $('#subNameEdit').val(book.subName);
                 $('#serialNoEdit').val(book.serialNo);
-                $('#authorEdit').val(book.authorName);
-                $('#publishingHouseEdit').val(book.publishingHouseName);
-                $('#ISBNNumberEdit').val(book.ISBNNumber);
+                //$('.authorEdit').val(book.authorName);
+                //$('.publishingHouseEdit').val(book.publishingHouseName);
+                $('#isbnnumberEdit').val(book.isbnnumber);
                 $('#descriptionEdit').val(book.description);
             });
-            $('#editModal').modal('show');
         });
     });
 </script>

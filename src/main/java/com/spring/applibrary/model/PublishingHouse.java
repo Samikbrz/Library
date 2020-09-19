@@ -11,12 +11,8 @@ public class PublishingHouse {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "publishing_house_name")
     private String publishingHouseName;
-
-    @Column(name = "description")
     private String description;
-
 
     public PublishingHouse(int id, String publishingHouseName, String description) {
         this.id = id;

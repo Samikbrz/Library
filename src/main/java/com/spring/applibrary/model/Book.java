@@ -16,7 +16,7 @@ public class Book {
     private String serialNo;
     private String author;
     private String publishingHouse;
-    private String ISBNNumber;
+    private String isbnnumber;
     private String description;
 
     public Book(){}
@@ -61,6 +61,14 @@ public class Book {
         this.author = author;
     }
 
+    public String getIsbnnumber() {
+        return isbnnumber;
+    }
+
+    public void setIsbnnumber(String isbnnumber) {
+        this.isbnnumber = isbnnumber;
+    }
+
     public String getPublishingHouse() {
         return publishingHouse;
     }
@@ -69,13 +77,7 @@ public class Book {
         this.publishingHouse = publishingHouse;
     }
 
-    public String getISBNNumber() {
-        return ISBNNumber;
-    }
 
-    public void setISBNNumber(String ISBNNumber) {
-        this.ISBNNumber = ISBNNumber;
-    }
 
     public String getDescription() {
         return description;
@@ -92,7 +94,7 @@ public class Book {
         this.serialNo = serialNo;
         this.author = author;
         this.publishingHouse = publishingHouse;
-        ISBNNumber = isbnNumber;
+        isbnnumber = isbnNumber;
         this.description = description;
     }
 

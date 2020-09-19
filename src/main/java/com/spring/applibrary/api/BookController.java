@@ -59,7 +59,8 @@ public class BookController {
     }
 
     @PostMapping("/savenewbook")
-    public String saveBook(Book book) {
+    public String saveBook(Book book)
+    {
         bookService.save(book);
         return "redirect:/api/books";
     }
