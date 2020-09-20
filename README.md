@@ -14,7 +14,7 @@
 
 # Proje Kurulum
 
-:heavy_check_mark: Projeyi kendi bilgisayarınıza indirdikten sonra kendi IDE ortmanıza aktarmanız gereklidir.
+:heavy_check_mark: Projeyi kendi bilgisayarınıza indirdikten sonra IDE ortmanıza aktarmanız gereklidir.
 
 :heavy_check_mark: Öncelikle veritabanımızda resource dosyası içinde bulunan sql dosyasının içindeki kodları kendi databasemizde çalıştırmanız gereklidir.
 
