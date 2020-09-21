@@ -1,8 +1,6 @@
 package com.spring.applibrary.api;
 
-import com.spring.applibrary.model.Author;
 import com.spring.applibrary.model.PublishingHouse;
-import com.spring.applibrary.service.abstracts.AuthorService;
 import com.spring.applibrary.service.abstracts.PublishingHouseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -39,8 +37,7 @@ public class PublishingHouseController {
     @ResponseBody
     public Optional<PublishingHouse> findById(int id)
     {
-        Optional<PublishingHouse> result = publishingHouseService.findById(id);
-        return result;
+        return publishingHouseService.findById(id);
     }
 
     @RequestMapping("/addnewpublishinghouse")
@@ -58,7 +55,7 @@ public class PublishingHouseController {
                 isexist=true;
             }
         }
-        if (isexist==false){
+        if (!isexist){
             publishingHouseService.save(publishingHouse);
         }
         return "redirect:/api/publishinghouse";

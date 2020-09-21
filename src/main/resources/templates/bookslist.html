@@ -138,7 +138,6 @@
         $('table #editButton').on('click', function (event){
             event.preventDefault();
             var href=$(this).parent().attr('href');
-            $('#editModal').modal('show');
             $.get(href).done(function(book) {
                 $('#idEdit').val(book.id);
                 $('#nameEdit').val(book.name);
@@ -149,6 +148,7 @@
                 $('#isbnnumberEdit').val(book.isbnnumber);
                 $('#descriptionEdit').val(book.description);
             });
+            $('#editModal').modal('show');
         });
     });
 </script>

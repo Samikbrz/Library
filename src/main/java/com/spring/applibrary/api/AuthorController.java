@@ -7,7 +7,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -47,7 +46,7 @@ public class AuthorController {
                 isexist=true;
             }
         }
-        if (isexist==false){
+        if (!isexist){
             authorService.save(author);
         }
         return "redirect:/api/authors";
@@ -57,8 +56,7 @@ public class AuthorController {
     @ResponseBody
     public Optional<Author> findById(int id)
     {
-         Optional<Author> result = authorService.findById(id);
-         return result;
+         return authorService.findById(id);
     }
 
     @RequestMapping(value = "/updateauthor",method = {RequestMethod.PUT,RequestMethod.GET})

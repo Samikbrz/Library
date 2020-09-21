@@ -23,7 +23,7 @@ public class AuthorManager implements AuthorService {
     @Override
     @Transactional()
     public List<Author> getAll() {
-        return (List<Author>) authorRepository.findAll();
+        return authorRepository.findAll();
     }
 
     @Override
