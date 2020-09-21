@@ -2,7 +2,7 @@
 
 :heavy_check_mark: Proje temel bir kütüphane uygulamasıdır.
 
-:heavy_check_mark: Projede ağırlık verilen kısım backend di,Inversion of Cotrol, SOLID Object Orianted Programming ve Clean Code uygulanmaya çalışıldı.
+:heavy_check_mark: Projede ağırlık verilen kısım backend di,Inversion of Cotrol, SOLID,Object Orianted Programming ve Clean Code uygulanmaya çalışıldı.
 
 :heavy_check_mark: Frontend ve database kısmında eksiklikler mevcut.Daha sonraki commitlerde bu kısımlarda iyileştirmeler yapılacaktır. 
 
