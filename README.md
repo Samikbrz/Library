@@ -1,10 +1,10 @@
 # Proje Hakkında
 
-:heavy_check_mark: IDE olarak IntelliJ,Mysql için arayüz olarakta MySql Workbench i kullanıldı.
-
-:heavy_check_mark: Projede ağırlık verilen kısım backend di, okunaklı bir kod, SOLID e uygun ve kod standartlarına uygun kod yazılmaya çalışıldı bu yüzden frontend ve database kısmında eksiklikler mevcut.Daha sonraki commitlerde bu kısımlarda iyileştirmeler yapılacaktır. 
-
 :heavy_check_mark: Proje temel bir kütüphane uygulamasıdır.
+
+:heavy_check_mark: Projede ağırlık verilen kısım backend di,Inversion of Cotrol, SOLID ve Clean Code uygulanmaya çalışıldı.
+
+:heavy_check_mark: Frontend ve database kısmında eksiklikler mevcut.Daha sonraki commitlerde bu kısımlarda iyileştirmeler yapılacaktır. 
 
 :heavy_check_mark: Projede kitap tanımı,yazar yanımı,yayın evi tanımı yapılmaktadır.Kitap,yazar,yayın evi için ekleme,silme güncelleme işlemleri yapılabilmektedir.
 
@@ -33,3 +33,7 @@
 :heavy_check_mark: Maven
 
 :heavy_check_mark: MySql 
+
+:heavy_check_mark: IntelliJ
+
+:heavy_check_mark: MySql Workbench
