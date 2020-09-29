@@ -8,7 +8,7 @@
 
 :heavy_check_mark: Projede kitap tanımı,yazar yanımı,yayın evi tanımı yapılmaktadır.Kitap,yazar,yayın evi için ekleme,silme güncelleme işlemleri yapılabilmektedir.
 
-:heavy_check_mark: Kitaplar bölümünde Kitap adı, Seri adı, Yazar ya da ISBN ile arama yapılabilmektedir.
+:heavy_check_mark: Kitaplar bölümünde kitap adı, keri adı, kazar ya da ISBN ile arama yapılabilmektedir.
 
 # Proje Kurulum
 
@@ -20,7 +20,7 @@
 
 ![Image 2020-09-21 at 10 50 02](https://user-images.githubusercontent.com/44813157/93743236-584b1c00-fbf8-11ea-9355-99337223bfd0.jpeg)
 
-:heavy_check_mark:Daha sonra buradan admin sayfasına gidip kütüphane uygulaması için gerekli ekleme,silme,güncelleme,arama işlemlerimizi gerçekleştirebilirsiniz.
+:heavy_check_mark: Daha sonra buradan admin sayfasına gidip kütüphane uygulaması için gerekli ekleme,silme,güncelleme,arama işlemlerimizi gerçekleştirebilirsiniz.
 
 # Kullanılan Teknolojiler
 
