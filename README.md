@@ -18,8 +18,6 @@
 
 :heavy_check_mark: Daha sonra programı çalıştırıp tarayıcımıza http://localhost:8080/ yazdığınızda index sayfası karşılayacaktır;
 
-![Image 2020-09-21 at 10 50 02](https://user-images.githubusercontent.com/44813157/93743236-584b1c00-fbf8-11ea-9355-99337223bfd0.jpeg)
-
 :heavy_check_mark: Daha sonra buradan admin sayfasına gidip kütüphane uygulaması için gerekli ekleme,silme,güncelleme,arama işlemlerimizi gerçekleştirebilirsiniz.
 
 # Kullanılan Teknolojiler
