@@ -31,7 +31,3 @@
 :heavy_check_mark: Maven
 
 :heavy_check_mark: MySql 
-
-:heavy_check_mark: IntelliJ
-
-:heavy_check_mark: MySql Workbench
